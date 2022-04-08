@@ -1,16 +1,3 @@
-async function getPhotographers () {
-  const photographersData = fetch('./data/photographers.json')
-    .then(function (res) {
-      if (res.ok) {
-        return res.json()
-      }
-    })
-    .catch(function (err) {
-      console.log(err)
-    })
-  return photographersData
-}
-
 async function displayData (photographers) {
   const photographersSection = document.querySelector('.photographer_section')
 
@@ -20,12 +7,13 @@ async function displayData (photographers) {
     const userCardDOM = photographerModel.getUserCardDOM()
     photographersSection.appendChild(userCardDOM)
   })
-};
+}
 
 async function init () {
   // Récupère les datas des photographes
+  // eslint-disable-next-line no-undef
   const { photographers } = await getPhotographers()
   displayData(photographers)
-};
+}
 
 init()
