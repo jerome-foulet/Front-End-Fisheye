@@ -12,7 +12,7 @@ async function displayData (photographers) {
 async function init () {
   // Récupère les datas des photographes
   // eslint-disable-next-line no-undef
-  const photographerApi = new PhotographerApi('/data/photographers.json')
+  const photographerApi = new PhotographerApi('data/photographers.json')
   const { photographers } = await photographerApi.get()
   displayData(photographers)
 }

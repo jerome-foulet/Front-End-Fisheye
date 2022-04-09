@@ -34,7 +34,7 @@ async function init () {
   const photographerId = parseInt(new URL(document.location).searchParams.get('id'))
   // Récupère les datas des photographes et des medias
   // eslint-disable-next-line no-undef
-  const photographerApi = new PhotographerApi('/data/photographers.json')
+  const photographerApi = new PhotographerApi('data/photographers.json')
   const { photographers, media } = await photographerApi.get()
   // Filtre pour obtenir le photographe et les medias liés
   const photographer = photographers.filter(elt => elt.id === photographerId)[0]
