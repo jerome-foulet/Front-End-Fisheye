@@ -274,6 +274,7 @@ form textarea {
     line-height: 31px;
     width: 100px;
     text-align: right;
+    pointer-events: none;
 }
 
 .photographComplementary {
